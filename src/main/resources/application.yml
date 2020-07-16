@@ -1,0 +1,21 @@
+server:
+  port: 8092
+
+spring:
+  application:
+    name: customer-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8090/eureka}
+  instance:
+    preferIpAddress: true
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework: ERROR
+    com.example: TRACE
+  pattern:
+    console: "%-5level %d{yyyy-MM-dd HH:mm:ss} - %msg%n"
